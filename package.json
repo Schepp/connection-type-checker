@@ -1,0 +1,27 @@
+{
+  "name": "connection-type-checker",
+  "version": "1.0.0",
+  "description": "Utility that tries to figure out if you are on cellular or broadband",
+  "main": "connection-type-checker.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "grunt-release": "^0.13.0",
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-release": "^0.13.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "connection",
+    "type",
+    "mobile"
+  ],
+  "author": "Christian Schaefer <schaepp@gmx.de>",
+  "license": "MIT"
+}
