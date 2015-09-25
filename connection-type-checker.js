@@ -23,7 +23,7 @@
                 navigator.webkitConnection;
 
             if (typeof navigator.onLine !== 'undefined' && !navigator.onLine) {
-                callback.call(this, 'offline');
+                callback.call(undefined, 'offline');
             }
             else if (connection) {
                 if (window.console) {
@@ -32,16 +32,16 @@
 
                 switch (connection.type) {
                     default:
-                        callback.call(this, 'broadband');
+                        callback.call(undefined, 'broadband');
                         break;
 
                     case 'none':
-                        callback.call(this, 'offline');
+                        callback.call(undefined, 'offline');
                         break;
 
                     case 'bluetooth':
                     case 'cellular':
-                        callback.call(this, 'cellular');
+                        callback.call(undefined, 'cellular');
                         break;
                 }
             }
@@ -57,18 +57,18 @@
                         latency = entries[0].responseStart - entries[0].requestStart;
 
                     if (latency >= 50) {
-                        callback.call(this, 'cellular');
+                        callback.call(undefined, 'cellular');
                     } else {
-                        callback.call(this, 'broadband');
+                        callback.call(undefined, 'broadband');
                     }
                 });
                 req.addEventListener('error', function () {
-                    callback.call(this, 'offline');
+                    callback.call(undefined, 'offline');
                 });
                 req.open('GET', location.pathname + '?nocache=' + (new Date()).getTime());
                 req.send();
             } else {
-                callback.call(this, 'unknown');
+                callback.call(undefined, 'unknown');
             }
         }
 
@@ -79,4 +79,4 @@
             getConnectionType: getConnectionType
         };
     }));
-});
+})();
