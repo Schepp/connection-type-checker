@@ -21,8 +21,8 @@ window.returnExports.getConnectionType(function(result) {
 ## Possible return values
 
 * `'unknown'` for when neither of the above mentioned APIs is available (with would be on Safari)
-* `'cellular'` for when the Network Information API returns `'cellular'` or `'bluetooth'`, or when Resource Timing API measures latencies >= 75 ms.
-* `'broadband'` for when the Network Information API returns `'wifi'`, `'wimax'` or `'ethernet'`, or when Resource Timing API measures latencies < 75 ms.
+* `'cellular'` for when the Network Information API returns `'cellular'` or `'bluetooth'`, or when Resource Timing API measures latencies >= 100 ms.
+* `'broadband'` for when the Network Information API returns `'wifi'`, `'wimax'` or `'ethernet'`, or when Resource Timing API measures latencies < 100 ms.
 * `'offline'` for when `navigator.onLine` returns `false´ or the Network Information API returns `'none'`, or when Resource Timing AJAX call fails.
 
 ## Demo
