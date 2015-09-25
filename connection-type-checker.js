@@ -53,7 +53,7 @@
                 var entries = window.performance.getEntries(),
                     latency = entries[0].responseStart - entries[0].requestStart;
 
-                if (latency >= 50) {
+                if (latency >= 75) {
                     callback.call(undefined, 'cellular');
                 } else {
                     callback.call(undefined, 'broadband');
