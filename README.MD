@@ -24,3 +24,7 @@ getConnectionType(function(result){
 * `'cellular'` for when the Network Information API returns `'cellular'` or `'bluetooth'`, or when Resource Timing API measures latencies >= 50 ms.
 * `'broadband'` for when the Network Information API returns `'wifi'`, `'wimax'` or `'ethernet'`, or when Resource Timing API measures latencies < 50 ms.
 * `'offline'` for when `navigator.onLine` returns `false´ or the Network Information API returns `'none'`, or when Resource Timing AJAX call fails.
+
+## Demo
+
+[https://schepp.github.io/connection-type-checker/test/](https://schepp.github.io/connection-type-checker/test/)

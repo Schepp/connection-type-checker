@@ -1,7 +1,6 @@
 module.exports = function(grunt) {
 
-    grunt.initConfig({
-    });
+    grunt.initConfig({});
 
     grunt.loadNpmTasks('grunt-release');
 
