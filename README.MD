@@ -10,10 +10,10 @@ Include `connection-type-checker.js` script in your HTML file:
 <script src="connection-type-checker.js"></script>
 ```
 
-Execute `window.connectionTypeChecker.getConnectionType` with a callback function:
+Execute `connectionTypeChecker.getConnectionType` method with a callback function:
 
 ```js
-window.returnExports.getConnectionType(function(result) {
+connectionTypeChecker.getConnectionType(function(result) {
     alert(result);
 });
 ```
