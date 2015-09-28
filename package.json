@@ -1,6 +1,6 @@
 {
   "name": "connection-type-checker",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Utility that tries to figure out if you are on cellular or broadband",
   "main": "connection-type-checker.js",
   "directories": {
