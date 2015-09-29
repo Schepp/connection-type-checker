@@ -1,6 +1,6 @@
 # connection-type-checker
 
-Utility that tries to figure out if you are on cellular or broadband. It either uses the [Network Information API](https://w3c.github.io/netinfo/) or falls back to measuring latencies via [Resource Timing API](http://www.w3.org/TR/resource-timing/). If none of them is available, the connection type can not be specified. So use this utility on combination together with a graceful degradation approach.
+Utility that tries to figure out if you are on cellular or broadband. It either uses the [Network Information API](https://w3c.github.io/netinfo/) ([browser support](http://caniuse.com/#feat=netinfo)) or falls back to measuring latencies via [Resource Timing API](http://www.w3.org/TR/resource-timing/) ([browser support](http://caniuse.com/#feat=resource-timing)). If none of them is available, it will get the client's public IP from [ipify](https://www.ipify.org/) and compare that with the [GURFL list of mobile carrier IP blocks](http://www.nitingautam.com/operator.csv). If the connection type can not be specified, it will settle on broadband by default.
 
 ## Usage
 
@@ -20,10 +20,9 @@ connectionTypeChecker.getConnectionType(function(result) {
 
 ## Possible return values
 
-* `'unknown'` for when neither of the above mentioned APIs is available (which would be on Safari)
-* `'cellular'` for when the Network Information API returns `'cellular'` or `'bluetooth'`, or when Resource Timing API measures latencies >= 100 ms.
-* `'broadband'` for when the Network Information API returns `'wifi'`, `'wimax'` or `'ethernet'`, or when Resource Timing API measures latencies < 100 ms.
 * `'offline'` for when `navigator.onLine` returns `false` or the Network Information API returns `'none'`, or when Resource Timing AJAX call fails.
+* `'cellular'` for when the Network Information API returns `'cellular'` or `'bluetooth'`, or when Resource Timing API measures latencies >= 100 ms, or when the client's IP is amongst the list of mobile carriers.
+* `'broadband'` for when the Network Information API returns `'wifi'`, `'wimax'` or `'ethernet'`, or when Resource Timing API measures latencies < 100 ms, when the client's IP is not amongst the list of mobile carriers, or as the fallback value when none of the aforementioned works out.
 
 ## Demo
 
